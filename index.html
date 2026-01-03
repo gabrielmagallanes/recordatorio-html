@@ -5,6 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Recordatorios</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,7 +25,27 @@
     <ul id="lista"></ul>
 </div>
 
+<!-- Script principal -->
 <script src="script.js"></script>
+
+<!-- Registro del Service Worker -->
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker registrado"))
+        .catch(err => console.error("Error SW:", err));
+}
+</script>
+
+<!-- Permiso de notificaciones -->
+<script>
+if ("Notification" in window) {
+    if (Notification.permission === "default") {
+        Notification.requestPermission();
+    }
+}
+</script>
+
 </body>
 </html>
 

@@ -1,0 +1,15 @@
+{
+  "name": "Recordatorios",
+  "short_name": "Recordatorios",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#667eea",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/1827/1827392.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

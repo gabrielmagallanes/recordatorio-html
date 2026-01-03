@@ -6,6 +6,9 @@
     <meta charset="UTF-8">
     <title>Recordatorios</title>
 
+    <!-- Viewport para móvil -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#667eea">
@@ -20,26 +23,25 @@
 
     <input type="text" id="texto" placeholder="Escribe tu recordatorio">
     <input type="datetime-local" id="fecha">
+
     <button onclick="agregarRecordatorio()">Agregar</button>
 
     <ul id="lista"></ul>
 </div>
 
-<!-- Script principal -->
+<!-- Lógica -->
 <script src="script.js"></script>
 
-<!-- Registro del Service Worker -->
+<!-- Service Worker -->
 <script>
 if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js")
-        .then(() => console.log("Service Worker registrado"))
-        .catch(err => console.error("Error SW:", err));
+    navigator.serviceWorker.register("service-worker.js");
 }
 </script>
 
 <!-- Permiso de notificaciones -->
 <script>
-if ("Notification" in window) {
+if ("Notification" in window" ) {
     if (Notification.permission === "default") {
         Notification.requestPermission();
     }
@@ -48,4 +50,5 @@ if ("Notification" in window) {
 
 </body>
 </html>
+
 
